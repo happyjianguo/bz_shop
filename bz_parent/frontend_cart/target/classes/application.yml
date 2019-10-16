@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: frontend-cart
+
+server:
+  port: 9040
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://129.204.120.143:8761/eureka/
+
+
+#hystrix的超时时间
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+#ribbon的超时时间
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+
+#临时购物车的key
+cart_cookie_name: CART_COOKIE_NAME

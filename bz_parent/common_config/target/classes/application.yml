@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: common-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/yijuns/shop_config.git
+    bus:
+      refresh:
+        enabled: true #开启自动刷新
+  rabbitmq:
+    addresses: 129.204.120.143
+    username: admin
+    password: admin
+    port: 5672
+    virtual-host: /
+
+
+server:
+  port: 9000
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://129.204.120.143:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh #在Greewith.SR2版中需要开启

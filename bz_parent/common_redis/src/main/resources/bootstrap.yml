@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled:
+          server: true
+          serviceId: common-config #指定配置中心服务端的服务名称
+      name: common-redis #对应的{application}部分
+      profile: dev  #对应的是{profile}部分
+      uri: http://127.0.0.1:9000 #配置中心服务端的具体地址，Greenwith版中需要添加
+      label: master
